@@ -1,6 +1,4 @@
-# V4.3.3.6
-Robustes Portfolio mit Zeitphasen und Ländergewichtung
-# 📊 Robustes Portfolio – Benutzerhandbuch (V4.3.3.5)
+# 📊 Robustes Portfolio – Benutzerhandbuch (V4.3.3.6)
 
 ---
 
@@ -18,7 +16,7 @@ Das Tool funktioniert vollständig im Browser (offline, keine Internetverbindung
 |---|---|
 | **Strukturierte Auswahl** | Fonds werden nach Managementansatz in klar abgegrenzte Schichten (Schichten-Turm) eingeordnet |
 | **Automatische Gewichtung** | Sobald Beträge eingegeben werden, errechnet das Tool prozentuale Gewichtungen automatisch |
-| **Geographische Transparenz** | Die Länder- und Regionalverteilung des Gesamtportfolios wird visuell aufbereitet |
+| **Geographische Transparenz** | Die Länder- und Regionalverteilung des Gesamtportfolios wird visuell aufbereitet (6 Regionen) |
 | **Zeitphasen-Logik** | Fonds können nach Anlagehorizont und Lebensphase (Zeitphasen 1–6) gefiltert werden |
 | **Sofort-Export** | Das fertige Portfolio kann jederzeit als PDF gedruckt oder heruntergeladen werden |
 | **Datensicherung** | Das Portfolio kann als JSON-Datei gespeichert und später wiedergeladen werden |
@@ -66,48 +64,66 @@ Klicken Sie auf einen der **Zeitphasen-Buttons** (Zeitphase 1–6), um zu sehen,
 ### Portfolio-Info-Leiste (unterhalb des Turms)
 | Bereich | Funktion |
 |---|---|
-| **Verteilung nach Schicht** | Zeigt, wie viel € je Investmentschicht (Turm-Ebene) eingeplant ist |
-| **Länderverteilung nach Region** | Zeigt die geographische Aufteilung des Portfolios in 7 Cluster |
+| **Verteilung nach Schicht** | Zeigt, wie viel € je Investmentschicht eingeplant ist – in Turm-Reihenfolge (unten nach oben) |
+| **Länderverteilung nach Region** | Zeigt die geographische Aufteilung des Portfolios in 6 Regionen |
 
-> 💡 **Tipp:** Fahren Sie mit der Maus über einen Regions-Cluster (z. B. „USA 72,5%"), um die **Top-5-Länder** dieser Region mit ihrem jeweiligen Anteil am Gesamtportfolio zu sehen.
+> 💡 **Tipp:** Fahren Sie mit der Maus über einen Regions-Cluster (z. B. „Nordamerika 65,2%"), um die **Top-5-Länder** dieser Region mit ihrem jeweiligen Anteil zu sehen. Die Summe aller Regionen ergibt stets **100%**.
 
-### Regionale Cluster
-Das Portfolio wird automatisch in folgende 7 Weltregionen eingeteilt:
+### Regionale Cluster (ab V4.3.3.6)
 
-| Region | Bedeutung |
+Das Portfolio wird automatisch in **6 Weltregionen** eingeteilt. Die Prozentsätze werden auf Basis aller Fonds berechnet, für die Ländergewichtungen vorliegen, und auf 100% normalisiert.
+
+| Region | Enthält | Farbe |
+|---|---|---|
+| 🔵 **Nordamerika** | USA, Kanada, Mexiko | Blau |
+| 🟢 **Europa** | DE, FR, GB, CH, NL, AT, BE, SE, NO, DK, FI, ES, IT, PT, PL, CZ, HU, RO, GR, Baltikum … | Grün |
+| 🟣 **Schwellenländer** | China, Indien, Brasilien, Mexiko, Türkei, Südafrika, Nigeria, Ägypten, Israel, Kasachstan, Pakistan, Emerging Markets … | Lila |
+| 🩵 **Pacific** | Japan, Australien, Neuseeland, Südkorea, Taiwan, Hongkong, Singapur, Thailand, Vietnam, Philippinen, Indonesien, Malaysia … | Petrol |
+| ⬜ **Sonstige ETF** | Irland, Luxemburg (erscheinen in Gewichtungen als Fondsdomizil-Proxy) | Dunkelgrau |
+| ⬜ **Sonstige** | Sammel-Label wie „global", „sonstige", „Asien" (zu uneindeutig für eine klare Region), Frontier Markets | Hellgrau |
+
+> **Hinweis Sonstige ETF:** Taucht „Irland" oder „Luxemburg" als Ländergewichtung auf, handelt es sich in der Regel um das rechtliche Domizil eines ETFs, nicht um eine echte Investition in dieses Land. Diese werden daher gesondert ausgewiesen.
+
+> **Hinweis Sonstige:** Der generische Begriff „Asien" wird bewusst nicht Schwellenländern oder Pacific zugeordnet, da er in Fondsdaten sowohl entwickelte als auch aufstrebende Märkte umfassen kann.
+
+### Verteilung nach Schicht
+
+Die Aufschlüsselung folgt derselben **Reihenfolge wie der Turm** (von unten nach oben):
+
+| Reihenfolge | Schicht |
 |---|---|
-| 🔵 **USA** | Anteil US-amerikanischer Aktien/Anleihen |
-| 🔵 **Nordamerika ex USA** | Kanada, Mexiko etc. |
-| 🟢 **Europa** | Alle europäischen Länder inkl. UK, CH |
-| 🔴 **Japan** | Japanische Wertpapiere |
-| 🩵 **Pacific ex Japan** | Australien, Hongkong, Singapur, Taiwan, Südkorea etc. |
-| 🟠 **China** | Chinesische Wertpapiere |
-| 🟣 **Schwellenländer ex China** | Indien, Brasilien, Südafrika, Türkei etc. |
+| 1 | Tagesgeld |
+| 2 | Kapitalreservefonds |
+| 3 | Defensive Vermögensverwalter |
+| 4 | Ausgewogene Vermögensverwalter |
+| 5 | Dynamische Vermögensverwalter |
+| 6 | Märkte |
+| 7 | Spezialitäten / Themen |
 
 ### Mein Portfolio (rechte Spalte)
 
 | Symbol | Funktion |
 |---|---|
 | 💾 **Diskette** | Erstellt und öffnet das Portfolio als PDF in einem neuen Tab (dort speicherbar) |
-| ⬇ **Pfeil** | Exportiert das Portfolio als JSON-Datei zur späteren Wiederherstellung |
-| 🔄 **Kreis-Pfeil** | Lädt eine gespeicherte JSON-Datei und stellt das Portfolio wieder her |
-| ↺ **Reset** | Setzt das gesamte Portfolio zurück (mit Bestätigungs-Popup) |
+| ⬇ **Pfeil unten** | Exportiert das Portfolio als JSON-Datei zur späteren Wiederherstellung |
+| ⬆ **Pfeil oben** | Lädt eine gespeicherte JSON-Datei und stellt das Portfolio wieder her |
+| ↺ **Reset** | Setzt das gesamte Portfolio zurück |
 
 ---
 
 ## 🌍 „Länder aktualisieren" – Was steckt dahinter?
 
-Der Button **„🌍 Länder aktualisieren"** ist nur für den **Administrator** zugänglich (PIN-geschützt).
+Der Button **„🌍 Länder aktualisieren"** ist nur für den **Administrator** zugänglich.
 
 ### Was macht er?
 Er startet einen automatischen Datenabrufs-Prozess, der für jeden Fonds im System die aktuellen **Ländergewichtungen** (also: wie viel Prozent des Fonds sind in welchem Land investiert) aus den Factsheets der jeweiligen Fondsgesellschaften abruft und in das System einspielt.
 
 Diese Daten sind die Grundlage für die **Länderverteilung nach Region** – ein zentrales Analyse-Feature des Tools.
 
-### Warum ist er passwortgeschützt?
-1. **Kosten:** Der Abruf der Daten erfordert den lokalen Crawler-Server (`crawler_server.py`) und nutzt ggf. KI-gestützte Analyse (Google Gemini API) – **beides verursacht Kosten**, die der Administrator kontrollieren möchte.
-2. **Datenintegrität:** Eine unbeabsichtigte Aktualisierung durch einen Benutzer könnte fehlerhafte oder unvollständige Daten einschreiben.
-3. **Technische Voraussetzung:** Die Funktion setzt voraus, dass der Crawler-Server lokal läuft – das ist eine administrative Aufgabe.
+### Voraussetzungen
+- Lokaler Crawler-Server läuft: `python3 crawler_server.py`
+- Google Gemini API-Key ist konfiguriert (in `update_country_data.py`)
+- Dauer: ca. 3–5 Minuten für alle Fonds
 
 > **Für Benutzer:** Die Ländergewichtungen sind bereits vorausgefüllt und werden regelmäßig vom Administrator aktualisiert. Sie müssen diesen Button nicht betätigen.
 
@@ -117,12 +133,12 @@ Diese Daten sind die Grundlage für die **Länderverteilung nach Region** – ei
 
 ### Speichern
 1. Klicken Sie auf das **⬇-Symbol** (Pfeil nach unten) in „Mein Portfolio"
-2. Eine JSON-Datei wird erstellt (z. B. `portfolio_setup_02-04-2026.json`)
+2. Eine JSON-Datei wird erstellt (z. B. `portfolio_setup_05-04-2026.json`)
 3. Speichern Sie diese Datei an einem sicheren Ort
 
 ### Wiederherstellen
 1. Öffnen Sie das Tool im Browser
-2. Klicken Sie auf das **🔄-Symbol** (Pfeil-Kreis)
+2. Klicken Sie auf das **⬆-Symbol** (Pfeil nach oben)
 3. Wählen Sie Ihre gespeicherte JSON-Datei aus
 4. Das Portfolio wird vollständig wiederhergestellt
 
@@ -139,14 +155,41 @@ Diese Daten sind die Grundlage für die **Länderverteilung nach Region** – ei
 
 ---
 
+## 🗂️ Dateien im Ordner
+
+| Datei | Zweck |
+|---|---|
+| `index.html` | Einstiegspunkt – im Browser öffnen |
+| `app_v4.3.3.6.js` | Gesamte Anwendungslogik |
+| `styles_v4.3.3.6.css` | Styling und Layout |
+| `fund_data.js` | Alle Fondsdaten inkl. Ländergewichtungen |
+| `crawler_server.py` | Lokaler Server für Länder-Update (Administrator) |
+| `update_country_data.py` | Skript zur manuellen Aktualisierung der Ländergewichtungen |
+
+---
+
 ## ⚙️ Technische Hinweise
 
 - Das Tool läuft vollständig **lokal im Browser** (keine Serververbindung nötig für normale Nutzung)
-- Das Portfolio wird automatisch im **Browser-LocalStorage** gespeichert und beim nächsten Öffnen wiederhergestellt
+- Das Portfolio wird automatisch im **Browser-LocalStorage** gespeichert (Schlüssel: `portfolioV4336_setup`)
 - Bei Änderungen an der Software: **Cmd+Shift+R** (Hard-Reload) im Browser ausführen
 - Empfohlene Browser: **Google Chrome** oder **Safari** (aktuellste Version)
 - Getestet auf: macOS
 
 ---
 
-*Version 4.3.3.5 – Zuletzt aktualisiert: April 2026*
+## 📝 Versionshistorie
+
+| Version | Wichtigste Änderungen |
+|---|---|
+| **4.3.3.6** | Neue 6-Regionen-Länderverteilung (Nordamerika · Europa · Schwellenländer · Pacific · Sonstige ETF · Sonstige); 100%-Normalisierung der Regionanteile; Schicht-Reihenfolge an Turm angeglichen |
+| 4.3.3.5 | Crawler-Button für automatische Ländergewichtungs-Extraktion; Info-Bar mit Schicht- und Länderverteilung nebeneinander |
+| 4.3.3.4 | Robuste Ländergewichtungs-Berechnung; `fund_data.js` ausgelagert |
+| 4.3.3.3 | EB Aktien-Fondsliste vervollständigt |
+| 4.3.3.2 | JSON-Import/Export für Portfolio-Sicherung |
+| 4.3.3.1 | Sparrate pro Fonds; Layout-Verbesserungen |
+| 4.3.3 | Ländergewichtungs-Tooltips im Fonds-Modal |
+
+---
+
+*Version 4.3.3.6 – Zuletzt aktualisiert: April 2026*
